@@ -30,21 +30,24 @@ int main(void){
 	{
 		//use polling method to echo back data when available
 		if(data_available()){ 
-			byte = uart_read();
-			if(byte==0xD){ 
-				puts((uint8_t *)"\r\n"); //send new line character
-			//0 to 9 ascii code in hexadecimal 
-			}else if ((byte >= 0x30) && (byte <= 0x39)) 
-			{byte = byte - 0x30; display(byte);
-			
-			//small case letters a to f ascii code in hexadecimal
-			}else if ((byte >= 0x61) && (byte <= 0x66)){
-				byte = byte - 0x57; display(byte);
-				}else if((byte >= 0x41) && (byte <= 0x46)){
-					byte = byte - 0x37; display(byte);
-				}else{
-				
-				}
+		        byte = uart_read();
+			if(byte==0xD) puts((uint8_t *)"\r\n"); //send new line character
+			else if ((byte >= 0x30)&&(byte <= 0x39)){
+				byte = byte - (0x30); //Hexaecimal digits 0-9
+				display(byte);
+			}
+			else if ((byte >= 0x41)&&(byte <= 0x46)){
+				byte = byte - (0x37); //Hexadecimal Uppercase A-F
+				display(byte);
+			}
+			else if ((byte >= 0x61)&&(byte <= 0x66)){
+				byte = byte - (0x57); //Hexadecimal Lowercase a-f
+				display(byte);
+			}
+			else{
+				display(byte);  //Show nothing Hopefully
+			}
+		delay();
 		}
 	}
 }
