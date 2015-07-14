@@ -10,7 +10,7 @@
 
 int main(void){	
 	//whether to blink LED2
-	uint8_t blink=1;
+	//uint8_t blink=1;
 	//temporally UART data holder
 	uint8_t byte=0;
 
@@ -28,7 +28,7 @@ int main(void){
 	gpio_init();
 
 	//Loop forever
-	while(true)
+	while(1)
 	{
 		//use polling method to echo back data when available
 		if(data_available()){ 
