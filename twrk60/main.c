@@ -18,7 +18,7 @@ int main(void){
 	//initialize UART5 with 8-N-1 settings, 57600 baudrate
 	init_uart(UART5_BASE_PTR,periph_clk_khz,57600);
 
-	//initialize TSIO
+	//initialization of the TSI
 	tsi_init();
 
 	//clear all interrupts and enable interrupts

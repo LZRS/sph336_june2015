@@ -7,6 +7,12 @@
 
 #ifndef TSI_CONFIG_H_
 #define TSI_CONFIG_H_
+/*
+*Enabled clock gate
+*Configured number of scans
+*Calculated offset of the different channels
+*Enabled tsi module
+*/
 
 #include "MK60DZ10.h"
 #include "Mk60.h"

@@ -42,11 +42,14 @@ void gpio_init(void)
 	PE->PCR[8].mux = 0x3;	//alt3 = UART5_TX
 	PE->PCR[9].mux = 0x3; 	//alt3 = UART5_RX
 
-    //PTA4, PTB2, PTB3, PTB16 as TSIO
-    PA->PCR[4].mux = 0x00;    //alt0 = TSIO_CH5
-    portB->PCR[3].mux = 0x00;    //alt0 = TSIO_CH8
-    portB->PCR[2].mux = 0x00;    //alt0 = TSIO_CH7
-    portB->PCR[16].mux = 0x00;   //alt0 = TSIO_CH9
+        /*
+        *Enabled the TSIO ports although it is by default in TSIO_CH8, TSIO_CH7,TSIO_9
+        *PTA4, PTB2, PTB3, PTB16 as TSIO
+        */
+        PA->PCR[4].mux = 0x00;    //alt0 = TSIO_CH5
+        portB->PCR[3].mux = 0x00;    //alt0 = TSIO_CH8
+        portB->PCR[2].mux = 0x00;    //alt0 = TSIO_CH7
+        portB->PCR[16].mux = 0x00;   //alt0 = TSIO_CH9
         
 	//GPIO port data direction Port A as output for LEDs (pin 11, 28, 29 and 10), Port E UART5(PTE8 TX, PTE9 RX)
 	GPIOA->PDDR.bit_reg.bit11 = out;
