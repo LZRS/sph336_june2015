@@ -32,10 +32,10 @@ void tsi_init(void){
 	//Enable the channels desired
 	TSI0_PEN |= (TSI_PEN_PEN5_MASK|TSI_PEN_PEN7_MASK|
 	TSI_PEN_PEN8_MASK|TSI_PEN_PEN9_MASK);
-	TSI0_THRESHLD5 = (uint32_t)((0x1214)); //threshold channel offset = x1200 + (4d * n)
-	TSI0_THRESHLD7 = (uint32_t)((0x121c)); //0x1200+28d
-	TSI0_THRESHLD8 = (uint32_t)((0x1220)); //0x1200+32d
-	TSI0_THRESHLD9 = (uint32_t)((0x1224)); //0x1200+36d
+	TSI0_THRESHLD5 = (uint32_t)((0x134)); //threshold channel offset = x120 + (4d * n)
+	TSI0_THRESHLD7 = (uint32_t)((0x13c)); //0x120+28d
+	TSI0_THRESHLD8 = (uint32_t)((0x140)); //0x120+32d
+	TSI0_THRESHLD9 = (uint32_t)((0x144)); //0x120+36d
 	//Enable TSI module
 	TSI0_GENCS |= (TSI_GENCS_TSIEN_MASK);
 	//Enables TSI
