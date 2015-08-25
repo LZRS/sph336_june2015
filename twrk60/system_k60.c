@@ -28,7 +28,8 @@ void SystemInit(void)
 
   //uart5 enabled
   SIM_SCGC1 |= SIM_SCGC1_UART5_MASK;
-
+  //tsi0 enabled
+  SIM_SCGC5 |= (SIM_SCGC5_TSI_MASK);
   //defaults
   MCG_C2 = 0;
 
