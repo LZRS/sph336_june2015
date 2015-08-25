@@ -11,6 +11,7 @@
 #include"gpio.h"
 #include"uart.h"
 #include"adc.h"
+#include"tsi_config.h"
 
 uint8_t byte=0x0;
 void delay(void);
